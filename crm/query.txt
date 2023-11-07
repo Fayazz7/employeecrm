@@ -1,0 +1,30 @@
+python manage.py shell  >>enter shell
+
+>> import a model from a file
+
+from crm.models import Employees 
+
+>>> add object to a table
+
+Employees.objects.create(name="biju",department="staff",salary=5000,email="biju@gmail.com",age=23,contact="test2") 
+
+ >>fetching all details
+
+ qs=Employees.objects.all()
+ 
+ >>orm query for fetching a speacific details
+
+ qs=Employees.objects.get(id=1)
+
+ >>orm query for filtering records
+
+ qs=Employees.objects.filter(department="hr")
+
+ >>orm query for filtering with condition
+
+ qs=Employees.objects.filter(salary__gte=2000)
+
+ >>orm query or updation
+
+ Model_Name.objects.filter(id=user_id).update(Column_name=Value)
+
