@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {%load static%}
-    {%include "header.html"%}
-    
-</head>
-<body>
-    {%csrf_token%}
-    {%load static%}
-    {%include "nav.html"%}
-    <div class="container">
-        <div>
-            <ul class="list-group">
-                <li class="list-group-item">{{data.name}}</li>
-                <li class="list-group-item">{{data.department}}</li>
-                <li class="list-group-item">{{data.salary}}</li>
-                <li class="list-group-item">{{data.age}}</li>
-                <li class="list-group-item">{{data.contact}}</li>
-              </ul>
-              </div>
-        </div>
-    </div>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block navbar %}
+<div class="container">
+    <h1>Employee</h1>
+    <div>
+        {%if data.profile_pic%}
+        <img src="{{data.profile_pic.url}}" class="img-thumbnail" alt="">
+        {%endif%}
+    </div>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item">{{data.name}}</li>
+            <li class="list-group-item">{{data.department}}</li>
+            <li class="list-group-item">{{data.salary}}</li>
+            <li class="list-group-item">{{data.age}}</li>
+            <li class="list-group-item">{{data.contact}}</li>
+          </ul>
+          </div>
+    </div>
+</div>
+{% endblock  %}

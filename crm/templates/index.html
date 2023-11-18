@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {%load static%}
-    {%include 'header.html'%}
-
-</head>
-
-<body>
-
-
-    {% csrf_token %}
-    {%load static%}
-    {%include "nav.html"%}
-    <div class="d-flex justify-content-around">
-        <a class="btn btn-primary m-5 p-3" href="{% url 'emp-add' %}">Add Employee</a>
-        <a class="btn btn-primary m-5 p-3" href="{% url 'emp-list' %}">View All Employees</a>
-        <a class="btn btn-primary m-5 p-3" href="{% url 'emp-list' %}">Update Employees</a>
-    </div>
-
-
-</html>
+{% block navbar %}
+<div class="d-flex justify-content-around">
+    <a class="btn btn-primary m-5 p-3" href="{% url 'emp-add' %}">Add Employee</a>
+    <a class="btn btn-primary m-5 p-3" href="{% url 'emp-list' %}">View All Employees</a>
+    <a class="btn btn-primary m-5 p-3" href="{% url 'emp-list' %}">Update Employees</a>
+</div>
+{% endblock navbar %}
